@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- Métadonnées de la page -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titre de la page qui apparaît dans l'onglet du navigateur -->
+    <title>Université XYZ - Cours</title>
+    <!-- Lien vers notre fichier CSS externe -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cours.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#004080">
+    <link rel="apple-touch-icon" href="./IMG/icon-512.png">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+</head>
+
+<body>
+    <div id="loader">
+        <img src="./Logo/logo.jpg" alt="Logo" class="loader-logo">
+    </div>
+    <!-- En-tête du site avec le logo et la navigation -->
+    <header>
+        <nav class="navbar">
+
+            <!-- logo -->
+            <img src="./Logo/logo.jpg" class="logo" alt="">
+
+            <!-- ul -->
+
+            <ul class="links-container">
+                <li class="link-items"><a href="./index (1).html" class="links">Acceuil</a></li>
+                <li class="link-items"><a href="./classes.html" class="links ">Classes</a></li>
+                <li class="link-items"><a href="./cours.html" class="links">Cours</a></li>
+                <li class="link-items"><a href="./ajout-cours.html" class="links">Ajouter un Cours</a></li>
+                <li class="link-items"><a href="./contact.html" class="links">Contact</a></li>
+            </ul>
+
+            <div class="dark-mode-toggle">
+                <input type="checkbox" id="toggle-darkmode">
+                <label for="toggle-darkmode">
+                    <span class="icon-moon">🌙</span>
+                    <span class="icon-sun">🌞</span>
+                    <div class="ball"></div>
+                </label>
+            </div>
+
+
+            <!-- search box -->
+            <div class="nav-extras">
+
+                <div class="nav-toggler">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+
+        </nav>
+    </header> <br><br><br>
+
+
+    <!-- Contenu principal de la page -->
+
+    <main>
+        <div data-aos="zoom-in-down">
+            <section class="page-header">
+                <h2>Catalogue des Cours</h2>
+                <p>Explorez tous les cours disponibles à ECES</p>
+            </section>
+
+            <!-- Filtres pour les cours -->
+            <section class="filter-section" data-aos="fade-up">
+                <h2>Filtrer les cours</h2>
+                <input type="text" id="search-bar" placeholder="Rechercher un cours ou une filière">
+                <label for="filter-filiere">Filieres :</label>
+                <select id="filter-filiere">
+                    <option value="">Tous</option>
+                    <option value="Langues et Affaires">Langues et Affaires</option>
+                    <option value="Management OSE">Management OSE</option>
+                    <option value="Banque, Finances et Assurances">Banque, Finances et Assurances</option>
+                    <option value="Comptabilite et Gestion d'Entreprise">Comptabilite et Gestion d'Entreprise</option>
+                    <option value="Transport et Logistique">Transport et Logistique</option>
+                    <option value="Maintenance Industrielle">Maintenance Industrielle</option>
+                    <option value="Electricite Industrielle">Electricite Industrielle</option>
+                    <option value="Genie Informatique">Genie Informatique</option>
+                    <option value="Ressources Humaines">Ressources Humaines</option>
+                    <option value="Secretariat de Direction">Secretariat de Direction</option>
+                    <option value="Marketing et Action commerciale">Marketing et Action commerciale</option>
+                    <option value="Genie Civile">Genie Civile</option>
+                    <option value="Assistant Medical Generaliste">Assistant Medical Generaliste</option>
+                    <option value="Actuariat">Actuariat</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Gestion des Collectivites Locales">Gestion des Collectivites Locales</option>
+                    <option value="Diplomatie contemporaine">Diplomatie contemporaine</option>
+                    <option value="Droit et Techniques fonciers domaniaux">Droit et Techniques fonciers domaniaux
+                    </option>
+                    <option value="Prospective et Planification">Prospective et Planification</option>
+                    <option value="Finances Publiques">Finances Publiques</option>
+                    <option value="Securite informatique">Securite informatique</option>
+                    <option value="Management des ressources Humaines">Management des ressources Humaines</option>
+                    <option value="Chaine de la Logisique">Chaine de la Logisique</option>
+                    <option value="Qualite, Hygiene et Securite de l'Environnement">Qualite, Hygiene et Securite de
+                        l'Environnement</option>
+                    <option value="Audit comptable et Financier">Audit comptable et Financier</option>
+                    <!-- ➕ Ajoute ici toutes les valeurs existantes dans ta base -->
+                </select>
+
+                <label for="filter-niveau">Niveau :</label>
+                <select id="filter-niveau">
+                    <option value="">Tous</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="M1">M1</option>
+                    <option value="M2">M2</option>
+                </select>
+
+                <button id="reset-filter" class="btn">Réinitialiser</button>
+            </section>
+            <div id="filter-summary" style="margin: 15px 0; font-weight: bold; color: #145da0;"></div>
+
+        </div>
+
+
+        <!-- Liste des cours disponibles -->
+
+        <section class="courses-list" data-aos="fade-up">
+            <!-- Chaque cours est représenté par une carte -->
+
+        </section>
+
+    </main>
+
+    <!-- Pied de page du site -->
+    <footer>
+        <div class="footer-content" data-aos="fade-up">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><img src="./IMG/Email.ico" alt=""><br>Email: contact@eces.fr</p>
+                <p><img src="./IMG/phone.ico" alt=""><br>Téléphone: (+242) 069512469 / 056743368</p>
+                <p><img src="./IMG/map_marker.ico" alt=""><br>Adresse: 1399, Rue Moukoukoulou Plateau de 15 ans
+                    (derrière maouené PSP)</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="./index (1).html">Acceuil</a></li>
+                    <li><a href="./classes.html">Classes</a></li>
+                    <li><a href="./cours.html">Cours</a></li>
+                    <li><a href="./ajout-cours.html">Ajouter un cours</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="#"><img src="./IMG/facebook.ico" alt="">Facebook</a>
+                    <a href="#"><img src="./IMG/x.ico" alt="">Twitter</a>
+                    <a href="#"><img src="./IMG/linkedin.ico" alt="">LinkedIn</a>
+                    <a href="#"><img src="./IMG/instagram.ico" alt="">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 nachito web 👨‍💻. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <div id="notification-container"></div>
+
+    <button id="scrollToTopBtn" title="Retour en haut">⬆️</button>
+
+
+    <!-- Lien vers notre fichier JavaScript externe -->
+    <script src="js/script.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // durée des animations (en ms)
+            once: true // joue l’animation 1 seule fois
+        });
+    </script>
+
+</body>
+
+</html>

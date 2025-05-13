@@ -1,0 +1,19 @@
+body.dark-mode .presentation h2 {
+    color: #fff;
+}
+
+body.dark-mode .page-header h2 {
+    color: white;
+}
+
+body.dark-mode .presentation .feature h3 {
+    color: #fff;
+}
+
+body.dark-mode .news h2 {
+    color: white;
+}
+
+body.dark-mode .news-item h3 {
+    color: white;
+}

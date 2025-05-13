@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- Métadonnées de la page -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titre de la page qui apparaît dans l'onglet du navigateur -->
+    <title>Université XYZ - Ajouter un cours</title>
+    <!-- Lien vers notre fichier CSS externe -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./css/ajout-cours.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#004080">
+    <link rel="apple-touch-icon" href="./IMG/icon-512.png">
+
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+</head>
+
+<body>
+    <div id="loader">
+        <img src="./Logo/logo.jpg" alt="Logo" class="loader-logo">
+    </div>
+    <!-- En-tête du site avec le logo et la navigation -->
+    <header>
+        <nav class="navbar">
+
+            <!-- logo -->
+            <img src="./Logo/logo.jpg" class="logo" alt="">
+
+            <!-- ul -->
+
+            <ul class="links-container">
+                <li class="link-items"><a href="./index (1).html" class="links">Acceuil</a></li>
+                <li class="link-items"><a href="./classes.html" class="links ">Classes</a></li>
+                <li class="link-items"><a href="./cours.html" class="links">Cours</a></li>
+                <li class="link-items"><a href="./ajout-cours.html" class="links">Ajouter un Cours</a></li>
+                <li class="link-items"><a href="./contact.html" class="links">Contact</a></li>
+            </ul>
+
+            <div class="dark-mode-toggle">
+                <input type="checkbox" id="toggle-darkmode">
+                <label for="toggle-darkmode">
+                    <span class="icon-moon">🌙</span>
+                    <span class="icon-sun">🌞</span>
+                    <div class="ball"></div>
+                </label>
+            </div>
+
+
+            <!-- search box -->
+            <div class="nav-extras">
+
+                <div class="nav-toggler">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Contenu principal de la page -->
+    <main>
+        <br><br><br>
+        <section class="page-header">
+            <h2>Ajouter un Nouveau Cours</h2>
+            <p>Utilisez ce formulaire pour ajouter un nouveau cours au catalogue</p>
+        </section>
+        <!-- formulaire de connexion enseignant -->
+        <section class="form-section" data-aos="fade-up" id="login-section">
+            <h2>Connexion Enseignant</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mot_de_passe">Mot de passe :</label>
+                    <input type="password" id="mot_de_passe" name="mot_de_passe" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Se connecter</button>
+            </form>
+        </section>
+
+
+        <!-- Formulaire d'ajout de cours -->
+        <section class="form-section" id="add-course-section" data-aos="fade-up" style="display: none;">
+            <form id="add-course-form" enctype="multipart/form-data">
+                <!-- Champ pour le titre du cours -->
+                <div class="form-group">
+                    <label for="course-title">Titre du cours <span class="required">*</span></label>
+                    <input type="text" id="course-title" name="titre" required>
+                    <div class="error-message" id="title-error"></div>
+                </div>
+
+                <!-- Champ pour le code du cours -->
+                <div class="form-group">
+                    <label for="course-code">Code du cours <span class="required">*</span></label>
+                    <input type="text" id="course-code" name="code" placeholder="ex: INFO101" required>
+                    <div class="error-message" id="code-error"></div>
+                </div>
+
+                <!-- Sélection du département -->
+                <div class="form-group">
+                    <label for="course-department">Département <span class="required">*</span></label>
+                    <select id="course-department" name="departement" required>
+                        <option value="">Sélectionnez un département</option>
+                        <option value="Langues et Affaires">Langues et Affaires</option>
+                        <option value="Management OSE">Management OSE</option>
+                        <option value="Banque, Finances et Assurances">Banque, Finances et Assurances</option>
+                        <option value="Comptabilite et Gestion d'Entreprise">Comptabilite et Gestion d'Entreprise
+                        </option>
+                        <option value="Transport et Logistique">Transport et Logistique</option>
+                        <option value="Maintenance Industrielle">Maintenance Industrielle</option>
+                        <option value="Electricite Industrielle">Electricite Industrielle</option>
+                        <option value="Genie Informatique">Genie Informatique</option>
+                        <option value="Ressources Humaines">Ressources Humaines</option>
+                        <option value="Secretariat de Direction">Secretariat de Direction</option>
+                        <option value="Marketing et Action commerciale">Marketing et Action commerciale</option>
+                        <option value="Genie Civile">Genie Civile</option>
+                        <option value="Assistant Medical Generaliste">Assistant Medical Generaliste</option>
+                        <option value="Actuariat">Actuariat</option>
+                        <option value="Data Science">Data Science</option>
+                        <option value="Gestion des Collectivites Locales">Gestion des Collectivites Locales</option>
+                        <option value="Diplomatie contemporaine">Diplomatie contemporaine</option>
+                        <option value="Droit et Techniques fonciers domaniaux">Droit et Techniques fonciers domaniaux
+                        </option>
+                        <option value="Prospective et Planification">Prospective et Planification</option>
+                        <option value="Finances Publiques">Finances Publiques</option>
+                        <option value="Securite informatique">Securite informatique</option>
+                        <option value="Management des ressources Humaines">Management des ressources Humaines</option>
+                        <option value="Chaine de la Logisique">Chaine de la Logisique</option>
+                        <option value="Qualite, Hygiene et Securite de l'Environnement">Qualite, Hygiene et Securite de
+                            l'Environnement</option>
+                        <option value="Audit comptable et Financier">Audit comptable et Financier</option>
+                    </select>
+                    <div class="error-message" id="department-error"></div>
+                </div>
+
+                <!-- Sélection du niveau -->
+                <div class="form-group">
+                    <label for="course-level">Niveau <span class="required">*</span></label>
+                    <select id="course-level" name="niveau" required>
+                        <option value="">Sélectionnez un niveau</option>
+                        <option value="L1">L1</option>
+                        <option value="L2">L2</option>
+                        <option value="L3">L3</option>
+                        <option value="M1">M1</option>
+                        <option value="M2">M2</option>
+                    </select>
+                    <div class="error-message" id="level-error"></div>
+                </div>
+
+                <div class="form-group" data-aos="zoom-in">
+                    <label>Filières concernées :</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="filieres[]" value="Langues et Affaires">Langues et
+                            Affaires</label>
+                        <label><input type="checkbox" name="filieres[]" value="Management OSE">Management OSE</label>
+                        <label><input type="checkbox" name="filieres[]" value="Banque, Finances et Assurances">Banque,
+                            Finances et Assurances</label>
+                        <label><input type="checkbox" name="filieres[]"
+                                value="Comptabilite et Gestion d'Entreprise">Comptabilite
+                            et Gestion d'Entreprise</label>
+                        <label><input type="checkbox" name="filieres[]" value="Transport et Logistique">Transport et
+                            Logistique</label>
+                        <label><input type="checkbox" name="filieres[]" value="Maintenance Industrielle">Maintenance
+                            Industrielle</label>
+                        <label><input type="checkbox" name="filieres[]" value="Electricite Industrielle">Electricite
+                            Industrielle</label>
+                        <label><input type="checkbox" name="filieres[]" value="Genie Informatique">Genie
+                            Informatique</label>
+                        <label><input type="checkbox" name="filieres[]" value="Ressources Humaines">Ressources
+                            Humaines</label>
+                        <label><input type="checkbox" name="filieres[]" value="Secretariat de Direction">Secretariat de
+                            Direction</label>
+                        <label><input type="checkbox" name="filieres[]"
+                                value="Marketing et Action commerciale">Marketing
+                            et Action commerciale</label>
+                        <label><input type="checkbox" name="filieres[]" value="Genie Civile">Genie Civile</label>
+                        <label><input type="checkbox" name="filieres[]" value="Assistant Medical Generaliste">Assistant
+                            Medical Generaliste</label>
+                        <label><input type="checkbox" name="filieres[]" value="Actuariat">Actuariat</label>
+                        <label><input type="checkbox" name="filieres[]" value="Data Science">Data Science</label>
+                        <label><input type="checkbox" name="filieres[]"
+                                value="Gestion des Collectivites Locales">Gestion
+                            des Collectivites Locales</label>
+                        <label><input type="checkbox" name="filieres[]" value="Diplomatie contemporaine">Diplomatie
+                            contemporaine</label>
+                        <label><input type="checkbox" name="filieres[]"
+                                value="Droit et Techniques fonciers domaniaux">Droit
+                            et Techniques fonciers domaniaux</label>
+                        <label><input type="checkbox" name="filieres[]" value="Prospective et Planification">Prospective
+                            et Planification</label>
+                        <label><input type="checkbox" name="filieres[]" value="Finances Publiques">Finances
+                            Publiques</label>
+                        <label><input type="checkbox" name="filieres[]" value="Securite informatique">Securite
+                            informatique</label>
+                        <label><input type="checkbox" name="filieres[]"
+                                value="Management des ressources Humaines">Management
+                            des ressources Humaines</label>
+                        <label><input type="checkbox" name="filieres[]" value="Chaine de la Logisique">Chaine de la
+                            Logisique</label>
+                        <label><input type="checkbox" name="filieres[]"
+                                value="Qualite, Hygiene et Securite de l'Environnement">Qualite,
+                            Hygiene et Securite de l'Environnement</label>
+                        <label><input type="checkbox" name="filieres[]" value="Audit comptable et Financier">Audit
+                            comptable et Financier</label>
+
+
+                        <!-- ➕ Ajoute ici toutes tes filières -->
+                    </div>
+
+                    <button type="button" id="toggle-filters" class="btn btn-secondary">Tout cocher</button>
+                </div>
+
+
+
+                <!-- Champ pour le nom de l'enseignant -->
+                <div class="form-group">
+                    <label for="course-teacher">Enseignant <span class="required">*</span></label>
+                    <input type="text" id="course-teacher" name="nom" required>
+                    <div class="error-message" id="teacher-error"></div>
+                </div>
+
+                <!-- Champ pour les crédits ECTS -->
+                <div class="form-group">
+                    <label for="course-credits">Crédits ECTS <span class="required">*</span></label>
+                    <input type="number" id="course-credits" name="credits" min="1" max="30" required>
+                    <div class="error-message" id="credits-error"></div>
+                </div>
+
+                <!-- Champ pour la description du cours -->
+                <div class="form-group">
+                    <label for="course-description">Description <span class="required">*</span></label>
+                    <textarea id="course-description" name="description" rows="4" required></textarea>
+                    <div class="error-message" id="description-error"></div>
+                </div>
+
+                <!-- Champ pour les prérequis -->
+                <div class="form-group">
+                    <label for="course-prerequisites">Prérequis</label>
+                    <input type="text" id="course-prerequisites" name="prerequis">
+                </div>
+
+                <!-- Champ pour les méthodes d'évaluation -->
+                <div class="form-group">
+                    <label for="course-evaluation">Méthodes d'évaluation <span class="required">*</span></label>
+                    <textarea id="course-evaluation" name="evaluation" rows="2" required></textarea>
+                    <div class="error-message" id="evaluation-error"></div>
+                </div>
+
+                <!-- Champ pour le contenu du cours -->
+                <div class="form-group">
+                    <label for="fichier">Fichier PDF du cours :</label>
+                    <input type="file" id="fichier" name="fichier" accept=".pdf" required>
+                </div>
+
+                <!-- Boutons du formulaire -->
+                <div class="form-buttons">
+                    <button type="reset" class="btn btn-secondary">Réinitialiser</button>
+                    <button type="submit" class="btn btn-primary">Ajouter le cours</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Section qui affichera le résultat après soumission -->
+        <section class="result-section" data-aos="fade-up" id="submission-result" style="display: none;">
+            <h3>Cours ajouté avec succès !</h3>
+            <div class="course-preview">
+                <!-- Les détails du cours ajouté seront affichés ici dynamiquement via JavaScript -->
+            </div>
+
+            <button id="add-another" class="btn">Ajouter un autre cours</button>
+        </section>
+    </main>
+
+    <!-- Pied de page du site -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><img src="./IMG/Email.ico" alt=""><br>Email: contact@eces.fr</p>
+                <p><img src="./IMG/phone.ico" alt=""><br>Téléphone: (+242) 069512469 / 056743368</p>
+                <p><img src="./IMG/map_marker.ico" alt=""><br>Adresse: 1399, Rue Moukoukoulou Plateau de 15 ans
+                    (derrière maouené PSP)</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="./index (1).html">Acceuil</a></li>
+                    <li><a href="./classes.html">Classes</a></li>
+                    <li><a href="./cours.html">Cours</a></li>
+                    <li><a href="./ajout-cours.html">Ajouter un cours</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="#"><img src="./IMG/facebook.ico" alt="">Facebook</a>
+                    <a href="#"><img src="./IMG/x.ico" alt="">Twitter</a>
+                    <a href="#"><img src="./IMG/linkedin.ico" alt="">LinkedIn</a>
+                    <a href="#"><img src="./IMG/instagram.ico" alt="">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 nachito web 👨‍💻. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <div id="notification-container"></div>
+
+    <button id="scrollToTopBtn" title="Retour en haut">⬆️</button>
+
+    <!-- Lien vers notre fichier JavaScript externe -->
+    <script src="js/script.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // durée des animations (en ms)
+            once: true // joue l’animation 1 seule fois
+        });
+    </script>
+
+</body>
+
+</html>

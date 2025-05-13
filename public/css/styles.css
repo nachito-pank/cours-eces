@@ -1,0 +1,940 @@
+/* 
+   styles.css - Feuille de style principale pour le site web de l'Université XYZ
+   Cette feuille de style définit l'apparence visuelle de toutes les pages du site.
+*/
+
+/* ===== RESET ET STYLES DE BASE ===== */
+/* Réinitialisation des marges et rembourrages pour tous les éléments */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Inclut les paddings et borders dans la largeur/hauteur totale */
+}
+
+/* Définition des styles de base pour le corps du document */
+body {
+    font-family: 'Arial', sans-serif;
+    /* Police principale */
+    line-height: 1.6;
+    /* Espacement des lignes */
+    color: #333;
+    /* Couleur du texte */
+    background-color: #f8f8f8;
+    /* Couleur de fond légère */
+}
+
+/* Styles pour les liens */
+a {
+    color: #E6007E;
+    /* Couleur principale demandée pour les liens */
+    text-decoration: none;
+    /* Supprime le soulignement par défaut */
+    transition: color 0.3s;
+    /* Animation douce lors du survol */
+}
+
+a:hover {
+    color: #b3005f;
+    /* Version plus foncée de la couleur principale pour le survol */
+}
+
+/* Styles pour les titres */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    /* Gras */
+    margin-bottom: 0.5em;
+    /* Espace sous les titres */
+    color: #222;
+    /* Couleur légèrement plus foncée que le texte normal */
+}
+
+/* Styles pour les paragraphes */
+p {
+    margin-bottom: 1em;
+    /* Espace sous les paragraphes */
+}
+
+/* ===== CONTENEUR PRINCIPAL ===== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    /* Largeur maximale du contenu */
+    margin: 0 auto;
+    /* Centrage horizontal */
+    padding: 0 20px;
+    /* Espace sur les côtés */
+}
+
+/* ===== HEADER ET NAVIGATION ===== */
+/* header { */
+/* background-color: white; */
+/* Fond blanc pour l'en-tête */
+/* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+/* Ombre légère */
+/* padding: 1rem 2rem; */
+/* Rembourrage interne */
+/* position: sticky; */
+/* En-tête fixe lors du défilement */
+/* top: 0; */
+/* Collé en haut */
+/* z-index: 100; */
+/* Au-dessus des autres éléments */
+/* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; */
+/* } */
+
+/* navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    padding: 0 10vw;
+    z-index: 9;
+    background: #17086d;
+}
+
+.nav-toggler {
+    display: none;
+}
+
+.logo {
+    max-height: 150%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.links-container {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin-left: 38%;
+
+}
+
+.links {
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: .5rem 1rem;
+    transition: .2s;
+}
+
+.links:hover {
+    color: #E6007E;
+    background: white;
+    border-radius: 0 5px 4px;
+    -webkit-border-radius: 0 5px 4px;
+    -moz-border-radius: 0 5px 4px;
+    -ms-border-radius: 0 5px 4px;
+    -o-border-radius: 0 5px 4px;
+}
+
+.nav-extras {
+    display: block;
+    align-items: center;
+    margin-left: auto;
+    gap: 1rem;
+    border: 2px solid #fff;
+    border-radius: 14px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    -ms-border-radius: 14px;
+    -o-border-radius: 14px;
+}
+
+.nav-toggler.active {
+    background: #f1eff7;
+    border: 1px solid #fff;
+}
+
+.nav-toggler span {
+    display: flex;
+    width: 2rem;
+    height: 0.2rem;
+    background: white;
+    color: white;
+    margin: 0.4rem auto;
+    transition: all 0.3s ease;
+}
+
+
+/* ===== SECTION HERO (BANNIÈRE D'ACCUEIL) ===== */
+.hero {
+    background-color: #E6007E;
+    /* Couleur principale en arrière-plan */
+    color: white;
+    /* Texte blanc pour contraste */
+    padding: 4rem 2rem;
+    /* Grand rembourrage */
+    text-align: center;
+    /* Centrage du texte */
+    margin-bottom: 2rem;
+    /* Espace sous la bannière */
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+    /* Titre en blanc */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    /* Largeur maximale du texte */
+    margin: 0 auto;
+    /* Centrage */
+}
+
+/* ===== SECTIONS DE CONTENU ===== */
+section {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== CARTES (CLASSES, COURS, ETC.) ===== */
+.features,
+.news-grid,
+.classes-list,
+.courses-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.feature,
+.news-item,
+.class-card,
+.course-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature:hover,
+.news-item:hover,
+.class-card:hover,
+.course-card:hover {
+    transform: translateY(-5px);
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
+
+.class-card h3,
+.course-card h3 {
+    color: #E6007E;
+    /* Couleur principale pour les titres de cartes */
+    margin-bottom: 1rem;
+}
+
+/* ===== BOUTONS ===== */
+.btn {
+    display: inline-block;
+    background-color: #E6007E;
+    /* Couleur principale pour les boutons */
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background-color: #b3005f;
+    /* Version plus foncée au survol */
+    color: white;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* ===== FORMULAIRES ===== */
+.form-section {
+    max-width: 550px;
+    border-radius: 20px;
+    margin: 0 auto;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    box-shadow: white 6px 4px 8px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    font-family: inherit;
+    font-size: 1rem;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    -ms-border-radius: 14px;
+    -o-border-radius: 14px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #E6007E;
+    /* Couleur principale pour le focus */
+    box-shadow: 0 0 0 2px rgba(230, 0, 126, 0.2);
+}
+
+.required {
+    color: #E6007E;
+    /* Couleur principale pour les champs obligatoires */
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    display: none;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+/* ===== SECTION RÉSULTAT DE SOUMISSION ===== */
+.result-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f0f9ff;
+    border-radius: 5px;
+    border-left: 4px solid #E6007E;
+    /* Bordure gauche avec la couleur principale */
+}
+
+.course-preview {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== FILTRES DE COURS ===== */
+.course-filters {
+    background-color: #f5f5f5;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+}
+
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* ===== SECTION COURS DE CLASSE ===== */
+.class-courses {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    display: none;
+    /* Caché par défaut, affiché via JavaScript */
+}
+
+.courses-container {
+    margin-top: 1rem;
+}
+
+/* ===== PIED DE PAGE ===== */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 3rem 2rem 1rem;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-section li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #ddd;
+}
+
+.footer-section a:hover {
+    color: #fff;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid #444;
+    font-size: 0.9rem;
+}
+
+#notification-container {
+    position: fixed;
+    bottom: 20px;
+    right: 45%;
+    z-index: 1;
+}
+
+.notification {
+    background-color: #145da0;
+    color: white;
+    top: 0;
+    padding: 12px 18px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    opacity: 0.95;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.notification.success {
+    background-color: #28a745;
+    /* Vert */
+}
+
+.notification.error {
+    background-color: #dc3545;
+    /* Rouge */
+}
+
+.notification.info {
+    background-color: #007bff;
+    /* Bleu */
+}
+
+#filter-summary {
+    font-size: 16px;
+    padding: 8px;
+    background: #e8f0fe;
+    border-left: 5px solid #145da0;
+    border-radius: 4px;
+}
+
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .form-buttons button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .features,
+    .news-grid,
+    .classes-list,
+    .courses-list {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-container {
+        flex-direction: column;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+}
+
+
+@media (min-width:1440px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media (min-width:2000px) {
+    html {
+        font-size: 25px;
+    }
+}
+
+@media (max-width:1440px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 1200px) {
+    html {
+        font-size: 14.5px;
+    }
+}
+
+@media (max-width: 2018px) {
+
+    /*navbar*/
+    .nav-toggler {
+        border: 1px solid var(--accent-color);
+        border-radius: 8px;
+        display: block;
+        width: 2.5rem;
+        height: 2.1rem;
+        position: relative;
+        cursor: pointer;
+        transition: .5s ease-out;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+    }
+
+    .nav-toggler:hover {
+        border: 1px solid var(--secondary-color);
+    }
+
+    .nav-toggler span {
+        /* position: absolute; */
+        /* top: 30%; */
+        /* left: 00%; */
+        /* transform: translate(-50%, -50%); */
+        width: 70%;
+        height: .0.7rem;
+        border-radius: 1rem;
+        background: white;
+        transition: .5s ease-out;
+    }
+
+    .nav-toggler span:hover {
+        background: var(--accent-color);
+    }
+
+    .nav-toggler span:nth-child(1) {
+        top: 30%;
+    }
+
+    .nav-toggler span:nth-child(3) {
+        top: 70%;
+    }
+
+    .nav-toggler.active span:nth-child(1) {
+        transform: rotate(45deg) translate(0.5rem, 0.5rem);
+    }
+
+    .nav-toggler.active span:nth-child(2) {
+        display: none;
+    }
+
+    .nav-toggler.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+    }
+
+
+
+    .links-container {
+        display: block;
+        position: fixed;
+        top: 100%;
+        width: 100%;
+        right: 0;
+        position: absolute;
+        background: #17086d;
+        transition: .5s;
+        z-index: -1;
+        height: 0;
+        overflow: hidden;
+        box-shadow: -14px 10px 10px #f1ebef;
+    }
+
+    .links-container.active {
+        height: 22rem;
+    }
+
+    .links-container .link-items {
+        text-align: center;
+    }
+
+    .links-container .links {
+        display: block;
+        padding: 1.2rem 10vw;
+    }
+
+    .links-container .links:hover {
+        background: white;
+        color: #E6007E;
+    }
+}
+
+@media (max-width: 480px) {
+
+    h1,
+    h2,
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    form {
+        padding: 10px;
+    }
+}
+
+/* Grille des cours pour s’adapter */
+.cours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Checkboxes bien alignées */
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* code pour le dark mode */
+/* Mode sombre */
+/* ======= DARK MODE PRO ======= */
+
+/* Corps de page */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Navbar */
+body.dark-mode .navbar {
+    background-color: #1e1e1e;
+}
+
+/* Liens */
+body.dark-mode a {
+    color: #fff;
+    /* Rose doux et lisible */
+}
+
+body.dark-mode a:hover {
+    color: #ff4da6;
+    /* Rose un peu plus vif au hover */
+}
+
+/* Hero section */
+body.dark-mode .hero {
+    background-color: #2c003e;
+    /* Violet foncé pour contraster avec rose */
+    color: #ffb6c1;
+    /* Rose pâle */
+}
+
+/* Sections générales (cards, contenu...) */
+body.dark-mode section,
+body.dark-mode .feature,
+body.dark-mode .news-item,
+body.dark-mode .class-card,
+body.dark-mode .course-card,
+body.dark-mode .result-section {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+/* Cartes (effet hover) */
+body.dark-mode .feature:hover,
+body.dark-mode .news-item:hover,
+body.dark-mode .class-card:hover,
+body.dark-mode .course-card:hover {
+    background-color: #292929;
+    box-shadow: 0 5px 15px rgba(255, 128, 171, 0.2);
+}
+
+/* Boutons */
+body.dark-mode .btn {
+    background-color: #ff80ab;
+    color: #121212;
+}
+
+body.dark-mode .btn:hover {
+    background-color: #ff4da6;
+    color: white;
+}
+
+body.dark-mode .btn-secondary {
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background-color: #555;
+}
+
+/* Inputs et formulaires */
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background-color: #222;
+    color: #e0e0e0;
+    border: 1px solid #555;
+}
+
+body.dark-mode input:focus,
+body.dark-mode select:focus,
+body.dark-mode textarea:focus {
+    border-color: #ff80ab;
+    box-shadow: 0 0 0 2px rgba(255, 128, 171, 0.2);
+}
+
+/* Footer */
+body.dark-mode footer {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .footer-section a {
+    color: #ff80ab;
+}
+
+body.dark-mode .footer-section a:hover {
+    color: #ff4da6;
+}
+
+/* Notifications */
+body.dark-mode .notification {
+    background-color: #159204;
+    color: #fff;
+}
+
+/* ===== Dark Mode Toggle Switch ===== */
+.dark-mode-toggle {
+    margin-left: auto;
+}
+
+.dark-mode-toggle input {
+    display: none;
+}
+
+.dark-mode-toggle label {
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+    height: 30px;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle label .icon-moon,
+.dark-mode-toggle label .icon-sun {
+    font-size: 14px;
+}
+
+.dark-mode-toggle .ball {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Quand activé (dark mode ON) */
+.dark-mode-toggle input:checked+label {
+    background-color: #555;
+}
+
+.dark-mode-toggle input:checked+label .ball {
+    transform: translateX(30px);
+}
+
+
+/* bouton scroller jusqu'en haut */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    width: 50px;
+    background-color: #004080;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s, transform 0.3s;
+}
+
+#scrollToTopBtn.show {
+    opacity: 0.8;
+    pointer-events: auto;
+}
+
+#scrollToTopBtn:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+
+/* Loader avec logo */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #004080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease;
+    -webkit-transition: opacity 1s ease;
+    -moz-transition: opacity 1s ease;
+    -ms-transition: opacity 1s ease;
+    -o-transition: opacity 1s ease;
+}
+
+#loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Animation logo */
+.loader-logo {
+    width: 120px;
+    border-radius: 50%;
+    height: auto;
+    animation: spin 12s linear infinite;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    -webkit-animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

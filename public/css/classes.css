@@ -1,0 +1,11 @@
+body.dark-mode .news h2 {
+    color: white;
+}
+
+body.dark-mode .news-item h3 {
+    color: white;
+}
+
+body.dark-mode .page-header h2 {
+    color: white;
+}

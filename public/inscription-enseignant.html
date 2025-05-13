@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription Enseignant</title>
+    <link rel="stylesheet" href="./css/styles.css"> <!-- utilise ton CSS existant si tu as -->
+</head>
+<body>
+    <div id="loader">
+        <img src="./Logo/logo.jpg" alt="Logo" class="loader-logo">
+    </div>
+    <!-- En-tête du site avec le logo et la navigation -->
+    <header>
+        <nav class="navbar">
+
+            <!-- logo -->
+            <img src="./Logo/logo.jpg" class="logo" alt="">
+
+            <!-- ul -->
+
+            <ul class="links-container">
+                <li class="link-items"><a href="./index (1).html" class="links">Acceuil</a></li>
+                <li class="link-items"><a href="./classes.html" class="links ">Classes</a></li>
+                <li class="link-items"><a href="./cours.html" class="links">Cours</a></li>
+                <li class="link-items"><a href="./ajout-cours.html" class="links">Ajouter un Cours</a></li>
+                <li class="link-items"><a href="./login-utilisateur.html" class="links">Connexion</a></li>
+                <li class="link-items"><a href="./register-utilisateur.html" class="links">Inscription</a></li>
+                <li class="link-items"><a href="./contact.html" class="links">Contact</a></li>
+            </ul>
+
+            <div class="dark-mode-toggle">
+                <input type="checkbox" id="toggle-darkmode">
+                <label for="toggle-darkmode">
+                    <span class="icon-moon">🌙</span>
+                    <span class="icon-sun">🌞</span>
+                    <div class="ball"></div>
+                </label>
+            </div>
+
+
+            <!-- search box -->
+            <div class="nav-extras">
+
+                <div class="nav-toggler">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <section class="form-section">
+        <h2>Inscription Enseignant</h2>
+        <form id="register-form">
+            <div class="form-group">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mot_de_passe">Mot de passe :</label>
+                <input type="password" id="mot_de_passe" name="mot_de_passe" required>
+            </div>
+            <button type="submit" class="btn btn-primary">S'inscrire</button>
+        </form>
+    </section>
+    
+    <!-- Pied de page du site -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><img src="./IMG/Email.ico" alt=""><br>Email: contact@eces.fr</p>
+                <p><img src="./IMG/phone.ico" alt=""><br>Téléphone: (+242) 069512469 / 056743368</p>
+                <p><img src="./IMG/map_marker.ico" alt=""><br>Adresse: 1399, Rue Moukoukoulou Plateau de 15 ans
+                    (derrière maouené PSP)</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="./index (1).html">Acceuil</a></li>
+                    <li><a href="./classes.html">Classes</a></li>
+                    <li><a href="./cours.html">Cours</a></li>
+                    <li><a href="./ajout-cours.html">Ajouter un cours</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="#"><img src="./IMG/facebook.ico" alt="">Facebook</a>
+                    <a href="#"><img src="./IMG/x.ico" alt="">Twitter</a>
+                    <a href="#"><img src="./IMG/linkedin.ico" alt="">LinkedIn</a>
+                    <a href="#"><img src="./IMG/instagram.ico" alt="">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 nachito web 👨‍💻. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <div id="notification-container"></div>
+
+    <button id="scrollToTopBtn" title="Retour en haut">⬆️</button>
+
+    <!-- Lien vers notre fichier JavaScript externe -->
+    <script src="js/script.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // durée des animations (en ms)
+            once: true // joue l’animation 1 seule fois
+        });
+    </script>
+
+    <script src="js/register.js"></script>
+    <script src="./JS/script.js"></script>
+
+</body>
+</html>

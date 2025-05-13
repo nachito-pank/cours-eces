@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Contactez-nous</title>
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#004080">
+  <link rel="apple-touch-icon" href="./IMG/icon-512.png">
+
+  <link rel="stylesheet" href="./css/styles.css"> <!-- Ton CSS global -->
+  <link rel="stylesheet" href="./css/contact.css"> <!-- Ton CSS spécifique pour la page de contact -->
+</head>
+
+<body>
+  <div id="loader">
+        <img src="./Logo/logo.jpg" alt="Logo" class="loader-logo">
+    </div>
+  <header>
+    <nav class="navbar">
+
+      <!-- logo -->
+      <img src="./Logo/logo.jpg" class="logo" alt="">
+
+      <!-- ul -->
+
+      <ul class="links-container">
+        <li class="link-items"><a href="./index (1).html" class="links">Acceuil</a></li>
+        <li class="link-items"><a href="./classes.html" class="links ">Classes</a></li>
+        <li class="link-items"><a href="./cours.html" class="links">Cours</a></li>
+        <li class="link-items"><a href="./ajout-cours.html" class="links">Ajouter un Cours</a></li>
+        <li class="link-items"><a href="./contact.html" class="links">Contact</a></li>
+      </ul>
+
+      <div class="dark-mode-toggle">
+        <input type="checkbox" id="toggle-darkmode">
+        <label for="toggle-darkmode">
+          <span class="icon-moon">🌙</span>
+          <span class="icon-sun">🌞</span>
+          <div class="ball"></div>
+        </label>
+      </div>
+
+
+      <!-- search box -->
+      <div class="nav-extras">
+
+        <div class="nav-toggler">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+
+    </nav>
+  </header>
+
+  <br><br><br>
+  <div class="contact-container" data-aos="fade-up">
+    <h2>Contactez-nous</h2>
+    <form id="contact-form" data-aos="fade-right">
+      <input type="text" name="from_name" placeholder="Votre nom" required><br>
+      <input type="email" name="from_email" placeholder="Votre email" required><br>
+      <textarea name="message" placeholder="Votre message" rows="5" required></textarea><br>
+      <button type="submit" class="send">Envoyer</button>
+    </form>
+  </div>
+
+  <footer>
+    <div class="footer-content" data-aos="fade-up">
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><img src="./IMG/Email.ico" alt=""><br>Email: contact@eces.fr</p>
+        <p><img src="./IMG/phone.ico" alt=""><br>Téléphone: (+242) 069512469 / 056743368</p>
+        <p><img src="./IMG/map_marker.ico" alt=""><br>Adresse: 1399, Rue Moukoukoulou Plateau de 15 ans
+          (derrière maouené PSP)</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liens rapides</h3>
+        <ul>
+          <li><a href="./index (1).html">Acceuil</a></li>
+          <li><a href="./classes.html">Classes</a></li>
+          <li><a href="./cours.html">Cours</a></li>
+          <li><a href="./ajout-cours.html">Ajouter un cours</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Suivez-nous</h3>
+        <div class="social-links">
+          <a href="#"><img src="./IMG/facebook.ico" alt="">Facebook</a>
+          <a href="#"><img src="./IMG/x.ico" alt="">Twitter</a>
+          <a href="#"><img src="./IMG/linkedin.ico" alt="">LinkedIn</a>
+          <a href="#"><img src="./IMG/instagram.ico" alt="">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 nachito web 👨‍💻. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <button id="scrollToTopBtn" class="btn" title="Retour en haut">⬆️</button>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000, // durée des animations (en ms)
+      once: true // joue l’animation 1 seule fois
+    });
+  </script>
+
+
+  <script src="./JS/contact.js"></script>
+  <script src="./js/script.js"></script> <!-- Ton JS global -->
+
+</body>
+
+</html>

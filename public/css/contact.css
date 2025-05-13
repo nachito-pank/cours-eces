@@ -1,0 +1,187 @@
+   /* Un peu de style pour le formulaire (si tu n’as pas encore de CSS) */
+   body {
+     font-family: Arial, sans-serif;
+     background: #f4f4f4;
+   }
+
+   .contact-container {
+     max-width: 500px;
+     margin: auto;
+     background: white;
+     padding: 20px;
+     border-radius: 8px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   }
+
+   .contact-container h2 {
+     text-align: center;
+     /* margin-bottom: 20px; */
+   }
+
+   input,
+   textarea,
+   .send {
+     width: 100%;
+     padding: 10px;
+     margin-top: 10px;
+     border-radius: 17px;
+     border: 1px solid #ccc;
+     -webkit-border-radius: 17px;
+     -moz-border-radius: 17px;
+     -ms-border-radius: 17px;
+     -o-border-radius: 17px;
+   }
+
+   button {
+     background-color: #007bff;
+     color: white;
+     border: none;
+     cursor: pointer;
+   }
+
+   button:hover {
+     background-color: rgb(9, 197, 9);
+     transition: all 0.7s ease;
+     -webkit-transition: all 0.7s ease;
+     -moz-transition: all 0.7s ease;
+     -ms-transition: all 0.7s ease;
+     -o-transition: all 0.7s ease;
+   }
+
+   /* Notification pop-up */
+   .custom-alert {
+     position: fixed;
+     top: 15px;
+     right: 15px;
+     padding: 15px;
+     border-radius: 8px;
+     color: white;
+     z-index: 9999;
+     font-weight: bold;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+     transition: opacity 0.3s ease;
+   }
+
+   .custom-alert.success {
+     background-color: #28a745;
+   }
+
+   .custom-alert.error {
+     background-color: #dc3545;
+   }
+
+   @media (max-width: 720px) {
+
+    /*navbar*/
+    .nav-toggler {
+        border: 1px solid var(--accent-color);
+        border-radius: 8px;
+        display: block;
+        width: 2.5rem;
+        height: 2.1rem;
+        position: relative;
+        cursor: pointer;
+        transition: .5s ease-out;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+    }
+
+    .nav-toggler:hover {
+        border: 1px solid var(--secondary-color);
+    }
+
+    .nav-toggler span {
+        /* position: absolute; */
+        /* top: 30%; */
+        /* left: 00%; */
+        /* transform: translate(-50%, -50%); */
+        width: 70%;
+        height: .0.7rem;
+        border-radius: 1rem;
+        background: white;
+        transition: .5s ease-out;
+    }
+
+    .nav-toggler span:hover {
+        background: var(--accent-color);
+    }
+
+    .nav-toggler span:nth-child(1) {
+        top: 30%;
+    }
+
+    .nav-toggler span:nth-child(3) {
+        top: 70%;
+    }
+
+    .nav-toggler.active span:nth-child(1) {
+        transform: rotate(45deg) translate(0.5rem, 0.5rem);
+    }
+
+    .nav-toggler.active span:nth-child(2) {
+        display: none;
+    }
+
+    .nav-toggler.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+    }
+
+
+
+    .links-container {
+        display: block;
+        position: fixed;
+        top: 100%;
+        width: 100%;
+        right: 0;
+        position: absolute;
+        background: #17086d;
+        transition: .5s;
+        z-index: -1;
+        height: 0;
+        overflow: hidden;
+        box-shadow: -14px 10px 10px #f1ebef;
+    }
+
+    .links-container.active {
+        height: 22rem;
+    }
+
+    .links-container .link-items {
+        text-align: center;
+    }
+
+    .links-container .links {
+        display: block;
+        padding: 1.2rem 10vw;
+    }
+
+    .links-container .links:hover {
+        background: white;
+        color: #E6007E;
+    }
+}
+
+@media (max-width: 480px) {
+
+    h1,
+    h2,
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    button,
+    input,
+    select,
+    textarea,
+    .contact-container {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    form {
+        padding: 10px;
+    }
+}

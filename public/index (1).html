@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- Métadonnées de la page -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titre de la page qui apparaît dans l'onglet du navigateur -->
+    <title>ECES-Cours- Accueil</title>
+
+    <!-- AOS CSS -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#004080">
+    <link rel="apple-touch-icon" href="./IMG/icon-512.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- Lien vers notre fichier CSS externe -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Loader -->
+    <div id="loader">
+        <img src="./Logo/logo.jpg" alt="Logo" class="loader-logo">
+    </div>
+
+
+    <!-- En-tête du site avec le logo et la navigation -->
+    <header>
+        <nav class="navbar">
+
+            <!-- logo -->
+            <img src="./Logo/logo.jpg" class="logo" alt="">
+
+            <!-- ul -->
+
+            <ul class="links-container">
+                <li class="link-items"><a href="./index (1).html" class="links">Acceuil</a></li>
+                <li class="link-items"><a href="./classes.html" class="links ">Classes</a></li>
+                <li class="link-items"><a href="./cours.html" class="links">Cours</a></li>
+                <li class="link-items"><a href="./ajout-cours.html" class="links">Ajouter un Cours</a></li>
+                <li class="link-items"><a href="./contact.html" class="links">Contact</a></li>
+            </ul>
+
+            <div class="dark-mode-toggle">
+                <input type="checkbox" id="toggle-darkmode">
+                <label for="toggle-darkmode">
+                    <span class="icon-moon">🌙</span>
+                    <span class="icon-sun">🌞</span>
+                    <div class="ball"></div>
+                </label>
+            </div>
+
+
+            <!-- search box -->
+            <div class="nav-extras" data-aos="zoom-in">
+
+                <div class="nav-toggler">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+
+        </nav>
+    </header><br><br><br>
+
+    <!-- Contenu principal de la page -->
+    <main>
+        <!-- Section de bienvenue -->
+        <section class="hero">
+            <h2>Bienvenue à ECES</h2>
+            <p>Centre d'excellence pour l'enseignement supérieur depuis 1980</p>
+        </section>
+
+        <!-- Section présentant l'université -->
+        <section class="presentation" data-aos="fade-up">
+            <h2>Notre université</h2>
+            <p>ECES (Ecole Communautaire des Etudes Superieurs) est reconnue pour la qualité de son enseignement et la
+                diversité de ses formations. Nous proposons des cursus adaptés aux besoins du marché du travail et aux
+                aspirations de nos étudiants.</p>
+
+            <div class="features" data-aos="zoom-in">
+                <!-- Caractéristiques de l'université -->
+                <div class="feature">
+                    <h3>50+ Formations</h3>
+                    <p>Des formations variées dans tous les domaines académiques</p>
+                </div>
+                <div class="feature">
+                    <h3>200+ Enseignants</h3>
+                    <p>Un corps professoral expérimenté et dévoué</p>
+                </div>
+                <div class="feature">
+                    <h3>10 000+ Étudiants</h3>
+                    <p>Une communauté étudiante dynamique et diverse</p>
+                </div>
+                <div class="feature">
+                    <h3>200+ Enseignants</h3>
+                    <p>Un corps professoral expérimenté et dévoué</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section des actualités -->
+        <section class="news" data-aos="fade-up">
+            <h2>Actualités</h2>
+            <div class="news-grid" data-aos="zoom-in">
+                <article class="news-item">
+                    <h3>Ouverture des inscriptions</h3>
+                    <p>Les inscriptions pour l'année académique 2025-2026 sont désormais ouvertes.</p>
+                    <a href="#" class="btn">Lire plus</a>
+                </article>
+                <article class="news-item">
+                    <h3>Nouveau programme d'Intelligence Artificielle</h3>
+                    <p>Découvrez notre nouveau Master en Intelligence Artificielle et Data Science.</p>
+                    <a href="#" class="btn">Lire plus</a>
+                </article>
+                <article class="news-item">
+                    <h3>Conférence internationale</h3>
+                    <p>Notre université accueillera la conférence internationale sur l'éducation en mai 2025.</p>
+                    <a href="#" class="btn">Lire plus</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pied de page du site -->
+    <footer>
+        <div class="footer-content" data-aos="fade-up">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><img src="./IMG/Email.ico" alt=""><br>Email: contact@eces.fr</p>
+                <p><img src="./IMG/phone.ico" alt=""><br>Téléphone: (+242) 069512469 / 056743368</p>
+                <p><img src="./IMG/map_marker.ico" alt=""><br>Adresse: 1399, Rue Moukoukoulou Plateau de 15 ans
+                    (derrière maouené PSP)</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="./index (1).html">Acceuil</a></li>
+                    <li><a href="./classes.html">Classes</a></li>
+                    <li><a href="./cours.html">Cours</a></li>
+                    <li><a href="./ajout-cours.html">Ajouter un cours</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="#"><img src="./IMG/facebook.ico" alt="">Facebook</a>
+                    <a href="#"><img src="./IMG/x.ico" alt="">Twitter</a>
+                    <a href="#"><img src="./IMG/linkedin.ico" alt="">LinkedIn</a>
+                    <a href="#"><img src="./IMG/instagram.ico" alt="">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 nachito web 👨‍💻. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <button id="scrollToTopBtn" title="Retour en haut">⬆️</button>
+
+    <!-- Lien vers notre fichier JavaScript externe -->
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // durée des animations (en ms)
+            once: true // joue l’animation 1 seule fois
+        });
+    </script>
+
+</body>
+
+</html>

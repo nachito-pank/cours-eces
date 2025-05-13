@@ -1,0 +1,22 @@
+{
+  "name": "Cours En ligne",
+  "short_name": "Cours Eces",
+  "description": "Plateforme de gestion de cours universitaire",
+  "start_url": "./public/index (1).html",
+  "display": "standalone",
+  "background_color": "#004080",
+  "theme_color": "#004080",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./public/IMG/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./public/IMG/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

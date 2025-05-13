@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- Métadonnées de la page -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titre de la page qui apparaît dans l'onglet du navigateur -->
+    <title>ECES - Classes</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#004080">
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+    <!-- Lien vers notre fichier CSS externe -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/classes.css">
+    <link rel="apple-touch-icon" href="./IMG/icon-512.png">
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #f8f8f8;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #004080;
+        }
+
+        .card ul {
+            padding-left: 20px;
+        }
+
+        .card li {
+            margin-bottom: 5px;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 5px 10px;
+            background: #004080;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="loader">
+        <img src="./Logo/logo.jpg" alt="Logo" class="loader-logo">
+    </div>
+    <!-- En-tête du site avec le logo et la navigation -->
+    <header>
+        <nav class="navbar">
+
+            <!-- logo -->
+            <img src="./Logo/logo.jpg" class="logo" alt="">
+
+            <!-- ul -->
+
+            <ul class="links-container">
+                <li class="link-items"><a href="./index (1).html" class="links">Acceuil</a></li>
+                <li class="link-items"><a href="./classes.html" class="links ">Classes</a></li>
+                <li class="link-items"><a href="./cours.html" class="links">Cours</a></li>
+                <li class="link-items"><a href="./ajout-cours.html" class="links">Ajouter un Cours</a></li>
+                <li class="link-items"><a href="./contact.html" class="links">Contact</a></li>
+            </ul>
+
+            <div class="dark-mode-toggle">
+                <input type="checkbox" id="toggle-darkmode">
+                <label for="toggle-darkmode">
+                    <span class="icon-moon">🌙</span>
+                    <span class="icon-sun">🌞</span>
+                    <div class="ball"></div>
+                </label>
+            </div>
+
+
+            <!-- search box -->
+            <div class="nav-extras">
+
+                <div class="nav-toggler">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+
+        </nav>
+    </header>
+
+<br><br><br><br>
+    <!-- Contenu principal de la page -->
+    <h2>📚 Cours par Classe</h2>
+    <div class="container" id="classesContainer"></div>
+
+    <!-- Pied de page du site -->
+    <footer>
+        <div class="footer-content" data-aos="fade-up">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><img src="./IMG/Email.ico" alt=""><br>Email: contact@eces.fr</p>
+                <p><img src="./IMG/phone.ico" alt=""><br>Téléphone: (+242) 069512469 / 056743368</p>
+                <p><img src="./IMG/map_marker.ico" alt=""><br>Adresse: 1399, Rue Moukoukoulou Plateau de 15 ans
+                    (derrière maouené PSP)</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="./index (1).html">Acceuil</a></li>
+                    <li><a href="./classes.html">Classes</a></li>
+                    <li><a href="./cours.html">Cours</a></li>
+                    <li><a href="./ajout-cours.html">Ajouter un cours</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="#"><img src="./IMG/facebook.ico" alt="">Facebook</a>
+                    <a href="#"><img src="./IMG/x.ico" alt="">Twitter</a>
+                    <a href="#"><img src="./IMG/linkedin.ico" alt="">LinkedIn</a>
+                    <a href="#"><img src="./IMG/instagram.ico" alt="">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 nachito web 👨‍💻. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <button id="scrollToTopBtn" title="Retour en haut">⬆️</button>
+
+    <!-- Lien vers notre fichier JavaScript externe -->
+    <script src="js/script.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // durée des animations (en ms)
+            once: true // joue l’animation 1 seule fois
+        });
+    </script>
+    <script>
+        // Charger les cours et afficher cartes classes
+        fetch('/api/cours')
+            .then(res => res.json())
+            .then(cours => {
+                const container = document.getElementById('classesContainer');
+                const classesMap = new Map();
+
+                cours.forEach(c => {
+                    let filieres = [];
+                    try {
+                        filieres = JSON.parse(c.filieres);
+                    } catch { }
+
+                    filieres.forEach(filiere => {
+                        const cle = `${c.niveau}__${filiere}`;
+                        if (!classesMap.has(cle)) {
+                            classesMap.set(cle, { niveau: c.niveau, filiere, cours: [] });
+                        }
+                        classesMap.get(cle).cours.push({
+                            titre: c.titre,
+                            enseignant: c.enseignant_nom,   // <-- On prend enseignant_nom (ton API)
+                            fichier: c.fichier
+                        });
+                    });
+                });
+
+                // Générer les cartes
+                classesMap.forEach(classe => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `<h3>${classe.niveau} - ${classe.filiere}</h3>`;
+
+                    const ul = document.createElement('ul');
+                    classe.cours.forEach(c => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `<strong>${c.titre}</strong> (par ${c.enseignant})<br>
+                        <a href="/uploads/${c.fichier}" target="_blank">📥 Télécharger</a>`;
+                        ul.appendChild(li);
+                    });
+
+                    card.appendChild(ul);
+                    container.appendChild(card);
+                });
+            })
+            .catch(err => {
+                console.error(err);
+                alert('Erreur chargement cours');
+            });
+
+    </script>
+
+
+</body>
+
+</html>
